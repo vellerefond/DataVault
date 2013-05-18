@@ -5,7 +5,7 @@ A tool to encrypt and decrypt files using Serpent in CBC mode, written in C#.
 
 Features:
 
-	* Uses the BouncyCastle () Cryptographic C# library.
+	* Uses the BouncyCastle (http://www.bouncycastle.org/) Cryptographic C# library.
 	* Makes use Serpent in CBC mode.
 	* The key is hashed using the Whirlpool hash algorithm.
 
