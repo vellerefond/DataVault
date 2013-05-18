@@ -320,7 +320,7 @@ namespace DataVault {
 			alert(message, interactive, !string.IsNullOrEmpty(error_message));
 		}
 		
-		private static void alert(string message, bool interactive, bool error = true)
+		private static void alert(string message, bool interactive = false, bool error = true)
 		{
 			if (!interactive)
 				Console.WriteLine(message);
@@ -440,6 +440,8 @@ namespace DataVault {
 					print_usage("The provided source file path \"" +
 						    file_path_from +
 						    "\" does not exist.");
+				else if (Directory.Exists(file_path_from))
+					alert("The source file path cannot be a directory.");
 				
 				if (string.IsNullOrEmpty(file_path_to)) {
 					if (en_de_cryption_mode_current.Value == en_de_cryption_mode.encrypt) {
@@ -463,6 +465,9 @@ namespace DataVault {
 					alert("The source file path cannot be the same as the " +
 					      "destination file path.",
 					      interactive);
+                                
+                                if (Directory.Exists(file_path_to))
+                                        alert("The destination file path cannot be a directory.");
                                 
 				en_de_crypt(en_de_cryption_mode_current.Value,
 					    file_path_from,
