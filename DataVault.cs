@@ -206,7 +206,7 @@ namespace DataVault {
 									  new ParametersWithIV(new KeyParameter(key, 31, 32),
 											       iv));
 
-					int plaintext_buffer_size = 1000 * padded_buffered_block_cipher.GetBlockSize(),
+					int plaintext_buffer_size = 1024 * padded_buffered_block_cipher.GetBlockSize(),
 					    ciphertext_buffer_size = padded_buffered_block_cipher.GetBlockSize() +
 								     plaintext_buffer_size,
 					    bytes_read_count,
