@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-~/Applications/DataVault/DataVault.exe -p -d "$@";
+~/Applications/DataVault/DataVault.exe -p -d "$1";
 echo -n "Press any key to finish.";
 read -n 1;
 
