@@ -354,12 +354,11 @@ namespace DataVault {
 				if (args.Length == 2) {
 					arg1 = args[0].ToLower().Trim();
 					arg2 = args[1].ToLower().Trim();
-					if (!(arg1.Equals("-p") && arg2.Equals("-e")) &&
-					    !(arg1.Equals("-e") && arg2.Equals("-p")) &&
-					    !(arg1.Equals("-p") && arg2.Equals("-d")) &&
-					    !(arg1.Equals("-d") && arg2.Equals("-p")))
-						print_usage("At most, one of -e or -d is necessary.");
-					interactive = true;
+					if ((arg1.Equals("-p") && arg2.Equals("-e")) ||
+					    (arg1.Equals("-e") && arg2.Equals("-p")) ||
+					    (arg1.Equals("-p") && arg2.Equals("-d")) ||
+					    (arg1.Equals("-d") && arg2.Equals("-p")))
+						interactive = true;
 				}
 				
 				en_de_cryption_mode? en_de_cryption_mode_current = null;
