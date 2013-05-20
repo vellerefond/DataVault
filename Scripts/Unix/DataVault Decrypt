@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-~/Applications/DataVault/DataVault.exe -p -d "$1";
-echo -n "Press any key to finish.";
-read -n 1;
+OLDIFS=$IFS;
+export IFS=$'\n';
+
+for f in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS; do
+	~/Applications/DataVault/DataVault.exe -p -d "$f";
+done;
+
+export IFS=$OLDIFS;
 
